@@ -1,24 +1,16 @@
 import { fetchAdventures, fetchCruises } from "./lib/api_call";
+import Adventure from "./components/adventures";
 
 export default async function Home() {
   const getAllAdventures = await fetchAdventures();
   const getAllCruises = await fetchCruises();
+
   return (
     <div>
       <h1>Adventures</h1>
       <ul>
         {getAllAdventures.map((adventure, index) => (
-          <li key={index}>
-            <h2>{adventure.name}</h2>
-            {adventure.image && (
-              <img
-                src={adventure.image}
-                alt={adventure.name}
-                width={200}
-                height={200}
-              />
-            )}
-          </li>
+          <Adventure image={adventure.image} name={adventure.name} />
         ))}
       </ul>
       <h1>Cruises</h1>
