@@ -43,6 +43,7 @@ function CruisesList({ allCruises }) {
               startPort={cruise.startPort}
               endPort={cruise.endPort}
               shipImage={cruise.shipImage}
+              portNames={cruise.portNames}
             />
           </Grid>
         ))}

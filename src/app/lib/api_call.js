@@ -6,9 +6,6 @@ export async function fetchAdventures() {
 
     const adventures = res.data;
 
-    // const adventures = res.data.filter(
-    //   (adventure) => adventure.image && adventure.image !== "https:undefined"
-
     const isValidUrl = (url) => {
       try {
         new URL(url);

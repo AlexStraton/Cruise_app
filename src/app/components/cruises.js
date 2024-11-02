@@ -10,6 +10,7 @@ export default function CruiseCard({
   startPort,
   endPort,
   shipImage,
+  portNames,
 }) {
   return (
     <Card sx={{ height: "100%" }}>
@@ -28,9 +29,19 @@ export default function CruiseCard({
           Sail Date: {new Date(sailDate).toLocaleDateString()}
         </Typography>
         <Typography variant='body2'>Price: ${price}</Typography>
-        <Typography variant='body2'>Ship: {shipName}</Typography>
-        <Typography variant='body2'>Start Port: {startPort}</Typography>
-        <Typography variant='body2'>End Port: {endPort}</Typography>
+        <Typography variant='body3'>Ship: {shipName}</Typography>
+        <Typography variant='body4'>Start Port: {startPort}</Typography>
+        <Typography variant='body4'>End Port: {endPort}</Typography>
+        <Typography variant='body4'>
+          Ports:
+          {portNames.map((portName, i) => {
+            return (
+              <Typography key={i} sx={{ fontSize: "lg", fontWeight: "lg" }}>
+                {portName}
+              </Typography>
+            );
+          })}
+        </Typography>
       </CardContent>
     </Card>
   );
