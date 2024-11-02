@@ -4,7 +4,7 @@ export async function fetchAdventures() {
   try {
     const res = await axios.get("https://jjzl6.wiremockapi.cloud/adventures");
     const adventures = res.data;
-    console.log(adventures);
+
     return adventures;
   } catch (error) {
     console.error("An error has occured. Try again:", error);
@@ -20,6 +20,7 @@ export const fetchCruises = async () => {
   try {
     const res = await axios.get("https://jjzl6.wiremockapi.cloud/cruises");
     const cruises = res.data;
+    console.log(cruises);
     return cruises;
   } catch (error) {
     console.error("An error has occured. Try again:", error);
