@@ -33,7 +33,7 @@ export const fetchCruises = async () => {
   try {
     const res = await axios.get("https://jjzl6.wiremockapi.cloud/cruises");
     const cruises = res.data;
-    console.log(cruises);
+
     return cruises;
   } catch (error) {
     console.error("An error has occured. Try again:", error);

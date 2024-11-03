@@ -9,21 +9,21 @@ import BookmarkAdd from "@mui/icons-material/BookmarkAddOutlined";
 
 export default function AdventureCard({ image, name }) {
   return (
-    <Card sx={{ width: 320 }}>
-      <div>
-        <Typography level='title-lg'>{name}</Typography>
-        <IconButton
-          aria-label='bookmark Bahamas Islands'
-          variant='plain'
-          color='neutral'
-          size='sm'
-          sx={{ position: "absolute", top: "0.875rem", right: "0.5rem" }}>
-          <BookmarkAdd />
-        </IconButton>
-      </div>
+    <Card sx={{ position: "relative", padding: 2, margin: 2 }}>
+      <Typography level='title-lg'>{name}</Typography>
+      <IconButton
+        aria-label='ship image'
+        variant='plain'
+        color='neutral'
+        size='sm'
+        sx={{ position: "absolute", top: "0.875rem", right: "0.5rem" }}>
+        <BookmarkAdd />
+      </IconButton>
+
       <AspectRatio minHeight='120px' maxHeight='200px'>
         <img src={image} srcSet={image} loading='lazy' alt='' />
       </AspectRatio>
+
       <CardContent orientation='horizontal'>
         <Button
           variant='solid'
