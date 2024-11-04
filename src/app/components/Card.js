@@ -58,7 +58,6 @@ export default function ContainerCard({
 
       <CardContent orientation='horizontal'>
         <div>
-          {/* Display Price, Ship Name, Start/End Ports for Cruises only */}
           {price && (
             <>
               <Typography level='body-xs'>Total price:</Typography>
