@@ -9,17 +9,18 @@ const typewriterText = "Explore the World's Best Cruises";
 
 export default function Header() {
   const [displayedText, setDisplayedText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  //const [isReversing, setIsReversing] = useState(false);
 
   useEffect(() => {
-    if (currentIndex < typewriterText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + typewriterText[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex]);
+    const eachLetter = typewriterText.split("");
+    //console.log(eachLetter);
+    eachLetter.forEach((currentLetter, i) => {
+      setTimeout(() => {
+        setDisplayedText((prev) => prev + currentLetter);
+      }, i * 100);
+    });
+  }, []);
 
   return (
     <AppBar position='static' sx={{ backgroundColor: "#003366", paddingY: 2 }}>
