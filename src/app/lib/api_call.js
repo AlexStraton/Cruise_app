@@ -17,15 +17,9 @@ export async function fetchAdventures() {
     const adventuresArrayClean = adventures.filter(
       (item) => item.name && item.image && isValidUrl(item.image)
     );
-
     return adventuresArrayClean;
   } catch (error) {
     console.error("An error has occured. Try again:", error);
-    return {
-      props: {
-        adventures: [],
-      },
-    };
   }
 }
 
